@@ -132,7 +132,7 @@ contract ERC20Predicate is ITokenPredicate, AccessControlMixin, Initializable {
      * @notice Set the SOU contract address
      * @param _souContract Address of the SOU contract
      */
-    function setSOUContract(address _souContract) external only(MANAGER_ROLE) {
+    function setSOUContract(address _souContract) external only(DEFAULT_ADMIN_ROLE) {
         require(_souContract != address(0), "SOUAdapter: INVALID_SOU_ADDRESS");
         souContract = _souContract;
     }
